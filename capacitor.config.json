@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "lionheart",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

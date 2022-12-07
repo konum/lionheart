@@ -1,0 +1,7 @@
+{
+  "name": "lionheart",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
