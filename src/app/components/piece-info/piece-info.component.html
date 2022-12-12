@@ -1,0 +1,14 @@
+<div *ngIf="piece" class="piece-info">
+  <div class="piece-img">
+    <app-piece [cell]="piece" [staticShow]="true"></app-piece>
+  </div>
+  <div class="piece-details">
+    Strength: {{getStrength()}} <br>
+    Resistance: {{piece.hitPoints}} <br>
+    Attacks: {{piece.attacksLeft}} <br>
+    {{piece.special}}
+    <div *ngIf="piece.modifiers.length > 0">
+      <div *ngFor="let mod of piece.modifiers">{{mod.modifier > 0?'+':'-'}}{{mod.modifier}} {{mod.name}}</div> 
+    </div>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+.events {
+  position: absolute;
+  z-index: 1002;
+}
+
+.south .events {
+  transform: rotate(180deg);
+}
+
+
+
+.event {
+  display: block;
+  padding: 5px;
+  background: white;
+  border-radius: 5px;
+  color: red;
+  position: relative;
+  text-align: center;
+  font-size: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+
+.N {
+  animation: north 2s;
+  -moz-animation: north 2s;
+  -webkit-animation: north 2s;
+  opacity: 1;
+}
+
+.S {
+  transform: rotate(180deg) ;
+  animation: south 2s;
+  -moz-animation: south 2s;
+  -webkit-animation: south 2s;
+  opacity: 1;
+}
+
+@keyframes north {
+  0% {
+    transform: translate(0px);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(15px);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(35px);
+    opacity: 0;
+  }
+}
+
+@keyframes south {
+  0% {
+    transform: translate(0px) rotate(180deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(15px) rotate(180deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(35px) rotate(180deg);
+    opacity: 0;
+  }
+}

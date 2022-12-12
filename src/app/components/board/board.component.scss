@@ -1,0 +1,163 @@
+.square-container {
+  padding: 8px;
+}
+
+.square {
+  width: calc(100% / 9);
+  float: left;
+  position: relative;
+  padding-bottom: calc(100% / 9);
+}
+
+.square .content {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  margin: 1px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  font-size: 12px;
+}
+
+.default {
+  background-color: #47771e !important;
+  background-blend-mode: multiply;
+  background-image: url(/assets/lis.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.3;
+  z-index: 100;
+}
+
+.overlay{
+ 
+}
+
+.default-rotate{
+  opacity: 1;
+  transform: none !important;
+}
+
+.amount {
+  padding: 2px;
+  color: #373737;
+  position: absolute;
+}
+
+
+.outer-rotate{
+  animation: none !important;
+  font-size: 0px;
+}
+.rotate{
+  height: 100%;
+  width: 100%;
+  background:#e8e8e8;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 36px;
+}
+.hidden {
+  background-image: url(/assets/lis.png) !important;
+}
+
+
+.highlight {
+  opacity: 1;
+  background-color: #faffd0 !important;
+}
+
+.target {
+  background-blend-mode: overlay;
+  background-color: #ff825c !important;
+}
+
+.north {
+}
+
+.south {
+  transform: rotate(180deg);
+}
+
+
+.east {
+  transform: rotate(90deg);
+}
+
+
+.west {
+  transform: rotate(270deg);
+}
+
+
+.actionsLeft{
+  animation: move 2s;
+  animation-iteration-count:infinite;
+}
+
+.selected{
+  animation: none !important;
+  transform: scale(1.1) ;
+  background-color:#eec25a;
+background-blend-mode: multiply;
+}
+
+.attacking{
+  animation: attack 0.2s;
+}
+
+.above{
+  z-index: 1004;
+}
+
+@keyframes attack {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes move {
+  0% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.destroyed {
+  animation: destroyed 2s;
+}
+@keyframes destroyed {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+
+.north .events {
+  transform: rotate(0deg);
+}
+
+.east .events {
+  transform: rotate(90deg);
+}
+
+.west .events {
+  transform: rotate(270deg);
+}

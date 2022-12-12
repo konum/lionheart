@@ -1,0 +1,109 @@
+.button-out{
+    display: flex;
+    width: 100%;
+  }
+  
+  .button-text{
+    margin: auto;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .custom-button {
+    background-image: url(/assets/Button.svg);
+    width: 65px;
+    height: 60px;
+    background-size: 452px;
+  }
+
+  .custom-button:active {
+    animation: click 0.5s;
+  }
+  
+  @keyframes click {
+    0% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+ 
+  .col4 {
+    background-position-x: 208px;
+  }
+  
+  .col5 {
+    background-position-x: 145px;
+  }
+  
+  .col6 {
+    background-position-x: 85px;
+  }
+  
+  .col1 {
+    background-position-x: 439px;
+  }
+
+  .col2 {
+    background-position-x: 377px;
+  }
+  
+  .home {
+    background-position-y: 1410px;
+  }
+  
+  .info {
+    background-position-y: 1350px;
+  }
+  
+  .single {
+    background-position-y: 1290px;
+  }
+  
+  .multi {
+    background-position-y: 1230px;
+  }
+
+  .multi {
+    background-position-y: 1230px;
+  }
+
+  .settings {
+    background-position-y: 820px;
+  }
+  
+
+  .tutorial {
+    background-position-y: 585px;
+  }
+  .save {
+    background-position-y: 465px;
+  }
+  .classic {
+    background-position-y: 643px;
+  }
+
+  .advanced {
+    background-position-y: 643px;
+  }
+  
+  
+  .undo {
+    background-position-y: 583px;
+  }
+  
+  .right {
+    background-position-y: 1410px;
+  }
+  
+    
+  .left {
+    background-position-y: 1350px;
+  }
+
+    
+  .rotate {
+    background-position-y: 880px;
+  }

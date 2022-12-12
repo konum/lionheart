@@ -1,0 +1,18 @@
+
+  <div class="square-container" *ngFor="let row of board">
+    <div class="square" *ngFor="let cell of row" [class.north]="cell.orientation === 'N'"
+      [class.east]="cell.orientation === 'E'" [class.west]="cell.orientation === 'W'"
+      [class.south]="cell.orientation === 'S'" [class.above]="cell.events.length > 0">
+      <div *ngIf="cell.isPiece">
+        <app-piece [cell]="asPiece(cell)" (select)="selectPiece($event)"></app-piece>
+      </div>
+
+      <div class="content default" [class.highlight]="cell.highlight" *ngIf="cell && !cell.isPiece"
+        [class.hidden]="!cell.visible" (click)="selectPiece(cell)">
+      </div>
+
+      <div style="z-index: 1000;" *ngIf="cell">
+        <app-event [events]="cell.events"></app-event>
+      </div>
+    </div>
+  </div>

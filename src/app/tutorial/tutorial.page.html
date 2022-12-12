@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="/"   text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Tutorial</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div style="height: 12%; padding:20px; font-size: 13px;">
+    {{stepsText[step]}}
+  </div>
+  <div style="display: grid; height: calc(100vw);">
+    <app-board [board]="game.board" (selectCell)="selectPiece($event)"></app-board>
+  </div>
+  <div style="height: calc(calc(100vh - calc(100vw))/2); width: 100%;" id="log" *ngIf="!!game.players" >
+    <app-player-dash [dices]="game.player2Dices" [player]="game.players[1]" [myTurn]="game.turn.name === game.players[1].name" [showPieceActions]="showPieceActions"
+      [actionsLeft]="game.actionsLeft" (pass)="switchTurn()" [myPiece]="game.selectedPiece" [enemyPiece]="game.selectedEnemyPiece" [canUndo]="game.canUndo"
+      (cancel)="cancel()" (attack)="attack()"   (undo)="undo()" (rotate)="rotate($event)" [showPass]="showPass"></app-player-dash>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons  slot="secondary">
+      <ion-button (click)="back()" [disabled]="step===0">Back</ion-button>
+    </ion-buttons>
+    <ion-buttons  slot="primary">
+      <ion-button (click)="next()" [disabled]="step===steps.length-1">Next</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

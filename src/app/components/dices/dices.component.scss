@@ -1,0 +1,195 @@
+.dice .content {
+  width: calc(100% - 2px);
+  height: calc(100% - 2px);
+  margin: 1px;
+  padding: 16px;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.view {
+  perspective: 600px;
+}
+.dice {
+  width: calc(100vw / 9);
+  height: calc(100vw / 9);
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.dice0 {
+  transform: rotateY(0deg) scale(0.7, 0.7) !important;
+}
+
+.dice1 {
+  transform: rotateY(360deg) !important;
+}
+.dice2 {
+  transform: rotateY(-90deg) !important;
+}
+.dice3 {
+  transform: rotateY(180deg) !important;
+}
+.dice4 {
+  transform: rotateY(90deg) !important;
+}
+.dice5 {
+  transform: rotateX(-90deg) !important;
+}
+.dice6 {
+  transform: rotateX(90deg) !important;
+}
+.diceFace {
+  position: absolute;
+  width: calc(100vw / 9);
+  height: calc(100vw / 9);
+  text-align: center;
+  line-height: calc(100vw / 9);
+  font-size: calc(100vw / 18);
+  border: 1px solid rgb(34, 34, 34);
+}
+
+.dice0 .front {
+  background-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-image: url(/assets/lis.png);
+}
+
+.front {
+  transform: rotateY(0deg) translateZ(calc(100vw / 18));
+  background-image: url(/assets/panic.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(calc(100vw / 18));
+  background-image: url(/assets/axe.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.back {
+  transform: rotateY(180deg) translateZ(calc(100vw / 18));
+  background-image: url(/assets/axe.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.left {
+  transform: rotateY(-90deg) translateZ(calc(100vw / 18));
+  background-image: url(/assets/axe.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.top {
+  transform: rotateX(90deg) translateZ(calc(100vw / 18));
+  background-image: url(/assets/arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.bottom {
+  transform: rotateX(-90deg) translateZ(calc(100vw / 18));
+  background-image: url(/assets/arrow.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+@media (max-width: 370px){
+
+  .dice {
+    width: 40px;
+    height: 40px;
+  }
+  .diceFace {
+    width: 40px;
+    height: 40px;
+  }
+
+  .front {
+    transform: rotateY(0deg) translateZ(20px);
+  }
+  
+  .right {
+    transform: rotateY(90deg) translateZ(20px);
+  }
+  .back {
+    transform: rotateY(180deg) translateZ(20px);
+  }
+  .left {
+    transform: rotateY(-90deg) translateZ(20px);
+  }
+  .top {
+    transform: rotateX(90deg) translateZ(20px);
+  }
+  .bottom {
+    transform: rotateX(-90deg) translateZ(20px);
+  }
+}
+
+@media(min-width: 501px){
+  
+.dice {
+  width: calc(50vw / 9);
+  height: calc(50vw / 9);
+}
+
+
+  .diceFace {
+    width: calc(50vw / 9);
+    height: calc(50vw / 9);
+    line-height: calc(50vw / 9);
+    font-size: calc(50vw / 18);
+  }
+  
+  .front {
+    transform: rotateY(0deg) translateZ(calc(50vw / 18));
+    background-image: url(/assets/panic.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  
+  .right {
+    transform: rotateY(90deg) translateZ(calc(50vw / 18));
+    background-image: url(/assets/axe.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .back {
+    transform: rotateY(180deg) translateZ(calc(50vw / 18));
+    background-image: url(/assets/axe.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .left {
+    transform: rotateY(-90deg) translateZ(calc(50vw / 18));
+    background-image: url(/assets/axe.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .top {
+    transform: rotateX(90deg) translateZ(calc(50vw / 18));
+    background-image: url(/assets/arrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .bottom {
+    transform: rotateX(-90deg) translateZ(calc(50vw / 18));
+    background-image: url(/assets/arrow.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+}

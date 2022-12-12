@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="/"   text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Units details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <app-piece-info [piece]="king"></app-piece-info>
+      <ion-card-subtitle>Cavalry</ion-card-subtitle>
+      <ion-card-title>King</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    The King is the most important unit of the army. If he dies, the player loses the battle. <br>
+    <b>Fearless:</b> The unit never flees. <br>
+    <b>Move 4:</b> The unit can move up to 4 cells with one movement.
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <app-piece-info [piece]="knight"></app-piece-info>
+      <ion-card-subtitle>Cavalry</ion-card-subtitle>
+      <ion-card-title>Knight</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    The Knights are a useful unit for flanking and charging enemy units. But beware, if you send them alone they can be quickly overrun.<br>
+    <b>Move 4:</b> The unit can move up to 4 cells with one movement.
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-card>
+    <ion-card-header>
+      <app-piece-info [piece]="soldier"></app-piece-info>
+      <ion-card-subtitle>Infantry</ion-card-subtitle>
+      <ion-card-title>Infantry</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    Infantry is the backbone of your army. No special rules apply.<br>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <app-piece-info [piece]="archer"></app-piece-info>
+      <ion-card-subtitle>Infantry</ion-card-subtitle>
+      <ion-card-title>Archer</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    Archers are a very useful unit, as they can attack from a distance.<br>
+    <b>Distance attack:</b> Archers can hit any enemy within a 3x3 field in front of them, even over other units.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <app-piece-info [piece]="heavy"></app-piece-info>
+      <ion-card-subtitle>Infantry</ion-card-subtitle>
+      <ion-card-title>Heavy Infantry</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    Heavy infantry is the deadliest unit in combat, but are slow to move. Is the only unit that can attack twice in the same turn. <br>
+    <b>Slow:</b> Movement cost 2 action points.<br>
+    <b>Poleaxe:</b> This unit can attack in every direction, even backwards.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <app-piece-info [piece]="merc"></app-piece-info>
+      <ion-card-subtitle>Infantry</ion-card-subtitle>
+      <ion-card-title>Mercenary</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    Mercenaries are a very special unit. They can cause other units to retreat and even cause panic in the enemy army, but can be bribed by the enemy king. <br>
+    <b>Fearless:</b> This unit never flees.<br>
+    <b>Scary:</b> For each Panic rolled in an attack, the enemy unit retreats 1 square. If the enemy unit encounters a friendly unit, panic will spread to it.<br>
+    <b>Mercenary:</b> If the mercenaries are besides the enemy king, they will switch to the enemy army. This can be prevented having your own king besides your mercenaries.
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <app-piece-info [piece]="peasant"></app-piece-info>
+      <ion-card-subtitle>Infantry</ion-card-subtitle>
+      <ion-card-title>Peasants</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+    Peasants are common folk fighting for your king. They are very unpredictible: they will hit with anything, but can panic very easily. For example if they roll 2 axes, 1 arrow and 1 panic 
+    they will get 2 hits and panic 1 square.<br>
+    <b>Coward:</b> For each Panic rolled in an attack, this unit will panic 1 square. Panic can spread to other units in the way. Hits are also resolved.<br>
+    <b>Easy hit:</b> This unit will hit with axes or arrows, whatever rolls more, but not both. 
+    </ion-card-content>
+  </ion-card>
+</ion-content>

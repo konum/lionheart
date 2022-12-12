@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="/"   text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Select mode</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Classic mode</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      The classic mode is great to learn the game. Armies are already deployed, and only basic units are avaliable:
+      King,
+      Knights, Archers and Infantry.
+    </ion-card-content>
+    <app-button-text icon="classic" label="Classic" (click)="classic()"></app-button-text>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Advanced mode</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      In advanced mode each player deploys his own army and additional units are avaliable: Heavy Infantry, Mercenaries
+      and Peasants.
+    </ion-card-content>
+    <app-button-text icon="advanced" label="Advanced" (click)="advanced()"></app-button-text>
+  </ion-card>
+
+
+
+</ion-content>

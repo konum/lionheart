@@ -24,3 +24,79 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+@font-face {
+    font-family: medieval;
+    src: url(/assets/medieval.woff);
+  }
+.title{
+  font-family: medieval;
+  font-size: 58px;
+  margin: auto;
+  display: table;
+  text-align: center;
+}
+
+.piece{
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1000;
+}
+
+.king1 {
+  background-image: url(/assets/player1/king1.jpg);
+}
+
+.king2 {
+  background-image: url(/assets/player2/king2.jpg);
+}
+
+.knight1 {
+  background-image: url(/assets/player1/knight1.jpg);
+}
+
+.knight2 {
+  background-image: url(/assets/player2/knight2.jpg);
+}
+
+.soldier1 {
+  background-image: url(/assets/player1/soldier1.jpg);
+}
+
+.soldier2{
+    background-image: url(/assets/player2/soldier2.jpg);
+}
+
+.archer1 {
+  background-image: url(/assets/player1/archer1.jpg);
+}
+
+.archer2 {
+  background-image: url(/assets/player2/archer2.jpg);
+}
+
+.heavy1 {
+  background-image: url(/assets/player1/heavy1.jpg);
+}
+
+.heavy2 {
+  background-image: url(/assets/player2/heavy2.jpg);
+}
+
+.peasant1 {
+  background-image: url(/assets/player1/peasant1.jpg);
+}
+
+.peasant2 {
+  background-image: url(/assets/player2/peasant2.jpg);
+}
+
+.mercenary1 {
+  background-image: url(/assets/player1/mercenary1.jpg);
+}
+
+.mercenary2 {
+  background-image: url(/assets/player2/mercenary2.jpg);
+}

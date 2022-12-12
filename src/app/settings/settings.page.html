@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="/"   text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Settings</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Sound settings</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Music</ion-label>
+        <ion-toggle [(ngModel)]="settigns.musicOn"></ion-toggle>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Sound</ion-label>
+        <ion-toggle [(ngModel)]="settigns.soundOn"></ion-toggle>
+      </ion-item>
+    </ion-card-content>
+    <app-button-text icon="save" label="Save" (click)="saveSettings()"></app-button-text>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Custom rules</ion-card-title>
+      <ion-card-subtitle>Apply only for new battles.</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      Actions per turn = {{rules.actionsPerTurn}}
+      <ion-range min="2" max="6" color="secondary" [(ngModel)]="rules.actionsPerTurn" pin="true" ticks="true"
+        snaps="true">
+        <ion-label slot="start">2</ion-label>
+        <ion-label slot="end">6</ion-label>
+      </ion-range>
+      <ion-item>
+        <ion-label>Advanced frontline</ion-label>
+        <ion-toggle [(ngModel)]="rules.advancedFrontLine"></ion-toggle>
+      </ion-item>
+      Troops can be deployed in three lines on advanced mode.
+      <ion-item>
+        <ion-label>Flanking</ion-label>
+        <ion-toggle [(ngModel)]="rules.flankingBonus"></ion-toggle>
+      </ion-item>
+      When attacking a unit from the flank or the back, attacker gets +1 strength.
+      <ion-item>
+        <ion-label>Cavalry charge</ion-label>
+        <ion-toggle [(ngModel)]="rules.cavalryCharge"></ion-toggle>
+      </ion-item>
+      When cavalry units move and attack in the same turn, they get +1 strength.
+      <ion-item>
+        <ion-label>Battle back</ion-label>
+        <ion-toggle [(ngModel)]="rules.battleBack"></ion-toggle>
+      </ion-item>
+      Defending units will attack back after the attacker hits are resolved.
+      <ion-item>
+        <ion-label>For the King</ion-label>
+        <ion-toggle [(ngModel)]="rules.forKing"></ion-toggle>
+      </ion-item>
+      Units besides his king won't panic and will have +1 strength.
+      <ion-item>
+        <ion-label>Total Battle</ion-label>
+        <ion-toggle [(ngModel)]="rules.totalBattle"></ion-toggle>
+      </ion-item>
+      Players can perform up to 2 actions per unit before switching turn. Recomended only for 2 players.
+      <ion-item>
+        <ion-label>Custom army</ion-label>
+        <ion-toggle [(ngModel)]="rules.customArmy"></ion-toggle>
+      </ion-item>
+      In advanced mode you can make your army as you wish. The AI will create a random army in 1 player mode.
+    </ion-card-content>
+    <app-button-text icon="save" label="Save" (click)="saveRules()"></app-button-text>
+  </ion-card>
+</ion-content>

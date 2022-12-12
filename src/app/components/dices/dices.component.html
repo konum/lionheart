@@ -1,0 +1,90 @@
+<!-- <div class="dice" *ngFor="let num of dices">
+  <div class="content dice-{{num}}"></div>
+</div>
+ -->
+<ion-grid style="padding: 0px;">
+  <ion-row>
+    <ion-col>
+      <div class="view" *ngIf="intDices">
+        <div class="dice dice{{intDices[0]}}">
+          <div class="diceFace front" ></div>
+          <div class="diceFace right" ></div>
+          <div class="diceFace back"></div>
+          <div class="diceFace left" ></div>
+          <div class="diceFace top" ></div>
+          <div class="diceFace bottom" ></div>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="view" *ngIf="intDices">
+        <div class="dice dice{{intDices[1]}}">
+          <div class="diceFace front" ></div>
+          <div class="diceFace right" ></div>
+          <div class="diceFace back"></div>
+          <div class="diceFace left" ></div>
+          <div class="diceFace top" ></div>
+          <div class="diceFace bottom" ></div>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="view" *ngIf="intDices">
+        <div class="dice dice{{intDices[2]}}">
+          <div class="diceFace front" ></div>
+          <div class="diceFace right" ></div>
+          <div class="diceFace back"></div>
+          <div class="diceFace left" ></div>
+          <div class="diceFace top" ></div>
+          <div class="diceFace bottom" ></div>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="view" *ngIf="intDices">
+        <div class="dice dice{{intDices[3]}}">
+          <div class="diceFace front" ></div>
+          <div class="diceFace right" ></div>
+          <div class="diceFace back"></div>
+          <div class="diceFace left" ></div>
+          <div class="diceFace top" ></div>
+          <div class="diceFace bottom" ></div>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="view" *ngIf="intDices && !!intDices[4]">
+        <div class="dice dice{{intDices[4]}}">
+          <div class="diceFace front" ></div>
+          <div class="diceFace right" ></div>
+          <div class="diceFace back"></div>
+          <div class="diceFace left" ></div>
+          <div class="diceFace top" ></div>
+          <div class="diceFace bottom" ></div>
+        </div>
+      </div>
+    </ion-col>
+    <ion-col>
+      <div class="view" *ngIf="intDices && !!intDices[5]">
+        <div class="dice dice{{intDices[5]}}">
+          <div class="diceFace front" ></div>
+          <div class="diceFace right" ></div>
+          <div class="diceFace back"></div>
+          <div class="diceFace left" ></div>
+          <div class="diceFace top" ></div>
+          <div class="diceFace bottom" ></div>
+        </div>
+      </div>
+    </ion-col><ion-col>
+      <div class="view" *ngIf="intDices && !!intDices[6]">
+        <div class="dice dice{{intDices[6]}}">
+          <div class="diceFace front" ></div>
+          <div class="diceFace right" ></div>
+          <div class="diceFace back"></div>
+          <div class="diceFace left" ></div>
+          <div class="diceFace top" ></div>
+          <div class="diceFace bottom" ></div>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>

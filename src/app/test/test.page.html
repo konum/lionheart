@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="display: grid; height: calc(100vw);">
+    <app-board [board]="game.board" (selectCell)="selectPiece($event)"></app-board>
+  </div>
+  <div style="height: calc(calc(100vh - calc(100vw))/2); width: 100%;" id="log" *ngIf="!!game.players" >
+    <app-player-dash [dices]="game.player2Dices" [player]="game.players[1]" [myTurn]="game.turn.name === game.players[1].name" [showPieceActions]="true"
+      [actionsLeft]="game.actionsLeft" (pass)="switchTurn()" [myPiece]="game.selectedPiece" [enemyPiece]="game.selectedEnemyPiece" [canUndo]="game.canUndo"
+      (cancel)="cancel()" (attack)="attack()"   (undo)="undo()" (rotate)="rotate($event)" [showPass]="true"></app-player-dash>
+  </div>
+
+</ion-content>

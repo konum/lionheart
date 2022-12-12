@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Lionheart Battles</string>
+    <string name="title_activity_main">Lionheart Battles</string>
+    <string name="package_name">cl.coding12.lionheart</string>
+    <string name="custom_url_scheme">io.ionic.starter</string>
+</resources>

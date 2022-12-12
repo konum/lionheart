@@ -1,0 +1,40 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button defaultHref="/"   text="Back"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding
+[class.disable-scrolling]='isScaling'>
+ <!--  <div style="height: calc(calc(100vh - calc(100vw))/2);  transform: rotate(180deg);" *ngIf="!!game.players && !game.gameFinished" >
+    <app-player-dash [dices]="game.player1Dices" [player]="game.players[0]"  [myTurn]="game.turn.name === game.players[0].name" [canUndo]="game.canUndo" [showPass]="false"
+    [actionsLeft]="game.actionsLeft" (pass)="switchTurn()" [myPiece]="game.selectedPiece" [enemyPiece]="game.selectedEnemyPiece"
+    (cancel)="cancel()" (attack)="attack()" (undo)="undo()" (rotate)="rotate($event)"></app-player-dash>
+  </div> 
+    <div  class="board" #board
+  pinch
+       (pinchstart)="onPinchStart($event)"
+       (pinchend)="onPinchEnd($event)"
+       (pinchmove)="onPinchMove($event)">
+-->
+  <div  class="board" #board>
+    <app-board [board]="game.board" (selectCell)="selectPiece($event)"></app-board>
+  </div>
+  <div *ngIf="game.gameFinished" style="display: grid; height: 100%">
+   <span class="title" *ngIf="game.winner.id===1">You lose!</span>
+   <span class="title" *ngIf="game.winner.id===2">You win!</span>
+   <ion-button expand="block" (click)="newBattle()">New battle</ion-button>
+  </div> 
+  <div class="player-dash" id="log" *ngIf="!!game.players && !game.gameFinished" >
+    <app-player-dash [dices]="game.player2Dices" [player]="game.players[1]" [myTurn]="game.turn.name === game.players[1].name"
+      [actionsLeft]="game.actionsLeft" (pass)="switchTurn()" [myPiece]="game.selectedPiece" [enemyPiece]="game.selectedEnemyPiece" [canUndo]="game.canUndo"
+      (cancel)="cancel()" (attack)="attack()" (undo)="undo()" (rotate)="rotate($event)"></app-player-dash>
+  </div>
+
+ 
+</ion-content>

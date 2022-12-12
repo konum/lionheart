@@ -1,0 +1,18 @@
+.label {
+  font-family: medieval;
+  font-size: 50px;
+  text-align: center;
+}
+
+.btn:active {
+  animation: click 0.5s;
+}
+
+@keyframes click {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

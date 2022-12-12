@@ -1,0 +1,43 @@
+<div class="dash" [class.notMyturn]="!myTurn" [class.myTurn]="myTurn" [ngClass]="isRotated?'rotated':''">
+    <div class="content" [hidden]="myPiece && myTurn">
+        <div [hidden]="myPiece && myTurn" class="dices">
+            <app-dices [dices]="dices"></app-dices>
+        </div>
+        <!--  {{player.name}} <br> -->
+        <span class="turn-info" *ngIf="myTurn">Actions: {{actionsLeft}}</span>
+        <span class="turn-info" *ngIf="!myTurn">Enemy turn</span>
+    </div>
+    <div class="button-bar" *ngIf="!myPiece">
+        <!-- <ion-button  [disabled]="!canUndo || !myTurn" *ngIf="showPass">
+            <ion-icon name="undo"></ion-icon>
+        </ion-button> -->
+        <app-button-icon icon="undo" (click)="undoBtn()" [disabled]="!canUndo || !myTurn" *ngIf="showPass">
+        </app-button-icon>
+
+        <img src="{{!myTurn?'/assets/endTurnOff.png':'/assets/endTurnOn.png'}}" (click)="passButn()" class="btn"
+            [class.endTurn]="actionsLeft === 0" *ngIf="showPass" style="height: 57px;">
+        <!--  <ion-button (click)="passButn()" [disabled]="!myTurn" [class.endTurn]="actionsLeft === 0" *ngIf="showPass">
+            End
+            turn</ion-button> -->
+    </div>
+
+    <div class="pieces" [hidden]="(!myPiece && myTurn) || !myTurn">
+        <div class="vs">
+            <div class="piece-info" >
+                <app-piece-info [piece]="myPiece" *ngIf="myPiece"></app-piece-info>
+            </div>
+            <div class="piece2-info" *ngIf="enemyPiece">
+                <app-piece-info [piece]="enemyPiece"></app-piece-info>
+            </div>
+        </div>
+        <div class="button-bar" *ngIf="showPieceActions">
+           
+
+            <app-button-icon icon="left" (click)="rotateBtn(-1)" *ngIf="!enemyPiece"></app-button-icon>
+            <app-button-icon icon="rotate" (click)="rotateBtn(2)" *ngIf="!enemyPiece"></app-button-icon>
+            <app-button-icon icon="right" (click)="rotateBtn(1)" *ngIf="!enemyPiece"></app-button-icon>
+        </div>
+        <img src="/assets/attack.png" *ngIf="showPieceActions && enemyPiece" (click)="attackBtn()" style="height: 57px; z-index: 10;"  class="btn">
+        <img src="/assets/cancel.png" *ngIf="showPieceActions" (click)="cancelBtn()" style="height: 57px;z-index: 10;"  class="btn">
+    </div>
+</div>

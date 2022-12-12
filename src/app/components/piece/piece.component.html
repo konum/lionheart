@@ -1,0 +1,16 @@
+<div class="content {{cell.name + cell.owner.id}}" [class.highlight]="cell.highlight" [class.selected]="cell.selected && !staticShow"
+*ngIf="cell && cell.isPiece" [class.destroyed]="cell.amount === 0" (click)="selectPiece()"
+[class.actionsLeft]="cell.actionsLeft !== 0 && cell.isPiece  && !staticShow" [class.target]="cell.target  && !staticShow"
+[class.hidden]="!cell.visible" [class.attacking]="cell.attacking">
+<div>
+  <div class="health-box" *ngIf="cell.amount"> 
+    <div class="health-bar" [ngStyle]="{'width': (cell.amount / cell.initialAmount) * 100 + '%'}"></div>
+  </div>
+</div>
+<div class="modifiers">
+  <div class="modifiear" *ngFor="let mod of cell.modifiers; let i = index" [class.margin-top]="i > 0">
+      <ion-icon name="arrow-dropup" *ngIf="mod.modifier > 0" class="positive-mod" ></ion-icon>
+      <ion-icon name="arrow-dropdown" *ngIf="mod.modifier < 0" class="negative-mod"></ion-icon>
+  </div>
+</div>
+</div>
